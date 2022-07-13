@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h3><strong><%= @pet.name %></strong> - Registro clínico</h3>
+<br>
+<p>
+  <strong>Fecha:</strong>
+  <%= @pethistory.date %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @pethistory.state %>
+</p>
+
+<p>
+  <strong>Peso (kg):</strong>
+  <%= @pethistory.weight %>
+</p>
+
+<p>
+  <strong>Altura (cm):</strong>
+  <%= @pethistory.height %>
+</p>
+
+<p>
+  <strong>Diagnóstico:</strong>
+  <%= @pethistory.diagnosis %>
+</p>
+
+<p>
+  <strong>Anamnesis:</strong>
+  <%= @pethistory.anamnesis %>
+</p>
+
+<%= link_to 'Editar', edit_pethistory_path(@pethistory) %> |
+<%= link_to 'Volver a Historial clínico', pet_pethistories_path(@pet) %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-07-07
+  state: 1
+  weight: 1.5
+  height: 1.5
+  diagnosis: MyString
+  anamnesis: MyText
+  pet: one
+
+two:
+  date: 2022-07-07
+  state: 1
+  weight: 1.5
+  height: 1.5
+  diagnosis: MyString
+  anamnesis: MyText
+  pet: two

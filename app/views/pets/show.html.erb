@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <strong><%= @pet.name %></strong>
+</h3>
+<br>
+<br>
+<div class='row col-md-6'>
+  <div class='col'>
+    <strong>Especie:  </strong><%= @pet.species %><br>
+    <strong>Raza:  </strong><%= @pet.race %><br>
+    <strong>Fecha de Nacimiento:  </strong><%= @pet.birth_date %>
+
+    <table class="table table-striped mt-2">
+      <thead>
+        <tr>
+          <th colspan="1"></th>
+          <th scope="col">Peso (kg)</th>
+          <th scope="col">Altura (cm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= 'Promedio' %></td>
+          <td><%= @pet.average_weight %></td>
+          <td><%= @pet.average_height %></td>
+        </tr>
+        <tr>
+          <td><%= 'Máximo' %></td>
+          <td><%= @pet.weight_max %></td>
+          <td><%= @pet.height_max %></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+</div>
+<br>
+<div class='text-center col-md-6 text-primary'>
+  <%= link_to 'Editar', edit_pet_path(@pet) %> | 
+  
+  <% if @pet.pethistories.present? %>
+  <%= link_to 'Ver historial clínico', pet_pethistories_path(@pet) %> |
+  <% else %>
+  <%= link_to 'Agregar registro clínico', new_pet_pethistory_path(@pet.id) %>  |
+  <% end %>  
+  <%= link_to 'Volver a Pacientes', pets_path %>
+</div>
