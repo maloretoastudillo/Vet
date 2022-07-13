@@ -1,12 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h3>
-  <strong><%= @pet.name %></strong>
-</h3>
-<br>
+<h3><strong><%= @pet.name %></strong></h3>
 <br>
 <div class='row col-md-6'>
   <div class='col'>
+    <h5>Nombre cliente: <%= @pet.client.name %></h5>
     <strong>Especie:  </strong><%= @pet.species %><br>
     <strong>Raza:  </strong><%= @pet.race %><br>
     <strong>Fecha de Nacimiento:  </strong><%= @pet.birth_date %>
@@ -36,7 +34,7 @@
 
 </div>
 <br>
-<div class='text-center col-md-6 text-primary'>
+<div class='text-center col-md-6'>
   <%= link_to 'Editar', edit_pet_path(@pet) %> | 
   
   <% if @pet.pethistories.present? %>
@@ -44,5 +42,6 @@
   <% else %>
   <%= link_to 'Agregar registro clínico', new_pet_pethistory_path(@pet.id) %>  |
   <% end %>  
-  <%= link_to 'Volver a Pacientes', pets_path %>
+  <%= link_to 'Volver a Pacientes', pets_path %>  |
+  <%= link_to 'Ir a Cliente', client_path(@pet.client_id) %>
 </div>

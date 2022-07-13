@@ -1,10 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
-
+<h3><strong><%= @client.name %></strong></h3>
+<br>
 <p>
   <strong>Phone:</strong>
   <%= @client.phone %>
@@ -15,5 +12,34 @@
   <%= @client.email %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<div class='row col-md-6'>
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Mascota</th>
+      <th scope="col">Peso máximo</th>
+      <th scope="col">Altura máxima</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @client.pets.present? %>
+      <% @client.pets.each do |pet| %>
+        <tr>
+          <th scope="row"><%=pet.name%></th>
+          <td><%= pet.weight_max %></td>
+          <td><%= pet.height_max %></td>
+          <td><%= link_to 'Ver detalles', pet_path(pet) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+ </table>
+</div>
+
+</div>
+<br>
+<div class='text-center col-md-6'>
+  <%= link_to 'Editar', edit_client_path(@client) %> | 
+  <%= link_to 'Volver a Clientes', clients_path %>
+</div>

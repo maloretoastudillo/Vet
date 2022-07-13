@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :pethistories
   end
 
-  root 'pets#index'
+  root 'clients#index'
 end

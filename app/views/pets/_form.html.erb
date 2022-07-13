@@ -31,6 +31,11 @@
     <%= form.date_select :birth_date, start_year: 1990 %>
   </div>
 
+    <div class="field">
+      <%= form.label 'Cliente' %>
+      <%= form.select :client_id, @clients %>
+    </div>
+
   <div class="actions">
     <%= form.submit 'Guardar' %>
   </div>
