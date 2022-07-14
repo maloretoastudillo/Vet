@@ -15,10 +15,10 @@ class Pet < ApplicationRecord
     end
 
     def average_weight
-        self.pethistories.average(:weight)
+        self.pethistories.average(:weight).round(1)
     end
 
     def average_height
-        self.pethistories.average(:height)
+        self.pethistories.average(:height).round(1)
     end
 end
