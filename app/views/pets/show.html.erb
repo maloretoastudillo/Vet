@@ -20,13 +20,13 @@
       <tbody>
         <tr>
           <td><%= 'Promedio' %></td>
-          <td><%= @pet.average_weight %></td>
-          <td><%= @pet.average_height %></td>
+          <td><%= @pet.average_weight if @pet.pethistories.present? %></td>
+          <td><%= @pet.average_height if @pet.pethistories.present? %></td>
         </tr>
         <tr>
           <td><%= 'Máximo' %></td>
-          <td><%= @pet.weight_max %></td>
-          <td><%= @pet.height_max %></td>
+          <td><%= @pet.weight_max if @pet.pethistories.present? %></td>
+          <td><%= @pet.height_max if @pet.pethistories.present? %></td>
         </tr>
       </tbody>
     </table>
